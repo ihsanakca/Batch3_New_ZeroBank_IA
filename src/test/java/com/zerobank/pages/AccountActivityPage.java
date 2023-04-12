@@ -17,6 +17,10 @@ public class AccountActivityPage extends BasePage{
     @CacheLookup
     private List<WebElement> transactionSubTitles;
 
+    @FindBy(xpath = "//a[.='Find Transactions']")
+    @CacheLookup
+    private WebElement findTransactionsButton;
+
     public WebElement getDropDownMenu(){
         return dropDownMenu;
     }
@@ -25,4 +29,7 @@ public class AccountActivityPage extends BasePage{
         return BrowserUtils.getElementsText(transactionSubTitles);
     }
 
+    public void tapOnFindTransactionButton(){
+        BrowserUtils.clickWithJS(findTransactionsButton);
+    }
 }
